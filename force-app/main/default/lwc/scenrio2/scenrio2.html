@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Scenario 2 - Show / Hide UI">
+
+        <lightning-input
+            type="checkbox"
+            label="Show Extra Details"
+            onchange={handleToggle}>
+        </lightning-input>
+
+        <template if:true={showSection}>
+            <div class="slds-box slds-m-top_medium">
+                <p><strong>Extra Details Section</strong></p>
+                <lightning-input label="Enter Details"></lightning-input>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

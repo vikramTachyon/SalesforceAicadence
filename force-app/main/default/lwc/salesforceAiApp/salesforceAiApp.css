@@ -1,0 +1,67 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #001d3d;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background: #f3f3f3;
+}
+
+.placeholder {
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+}
+li {
+    cursor: pointer;
+    padding: 10px;
+}
+
+li.active {
+    background: #1b96ff;
+    color: white;
+    border-radius: 6px;
+}
+.sidebar li {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+
+.sidebar li.active {
+    background: #0176d3;
+    color: white;
+}
+.main-content {
+    animation: fadein 0.25s ease-in;
+}
+
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

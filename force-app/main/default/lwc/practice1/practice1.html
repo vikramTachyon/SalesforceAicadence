@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Practice">
+
+        <lightning-input
+            label="Enter Message"
+            value={message}
+            onchange={handleChange}>
+        </lightning-input>
+
+        <p><strong>This is my msg: {message}</strong></p>
+
+        <lightning-button
+            label="OK"
+            onclick={handleClick}>
+        </lightning-button>
+
+    </lightning-card>
+</template>

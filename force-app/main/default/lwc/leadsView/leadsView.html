@@ -1,0 +1,33 @@
+<template>
+    <div class="panel">
+        <h2>Leads & Contacts</h2>
+
+        <lightning-input
+            type="search"
+            label="Search Leads"
+            onchange={handleSearch}
+            class="slds-m-bottom_medium">
+        </lightning-input>
+
+        <table class="lead-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={leads} for:item="lead">
+                    <tr key={lead.Id}>
+                        <td>{lead.Name}</td>
+                        <td>{lead.Email}</td>
+                        <td>{lead.Company}</td>
+                        <td>{lead.Status}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>

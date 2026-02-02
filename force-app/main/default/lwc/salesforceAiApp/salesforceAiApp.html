@@ -1,0 +1,32 @@
+<template>
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Salesforce AI Cadence</div>
+            <ul>
+                <li class={homeClass} data-id="home" onclick={handleMenuClick}>Home</li>
+<li class={leadsClass} data-id="leads" onclick={handleMenuClick}>Leads</li>
+<li class={cadencesClass} data-id="cadences" onclick={handleMenuClick}>Cadences</li>
+
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <template if:true={isHome}>
+                <c-dashboard-view></c-dashboard-view>
+            </template>
+
+            <template if:true={isLeads}>
+    <c-leads-view></c-leads-view>
+</template>
+
+
+            <template if:true={isCadences}>
+                <div>Cadences View</div>
+            </template>
+        </div>
+
+    </div>
+</template>

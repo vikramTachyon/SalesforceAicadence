@@ -1,0 +1,45 @@
+<template>
+    <div class="dashboard-container">
+
+        <!-- TOP METRICS -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <p>Emails Sent</p>
+                <h1>{emailsSent}</h1>
+            </div>
+
+            <div class="metric-card">
+                <p>Open Rate</p>
+                <h1>0%</h1>
+            </div>
+
+            <div class="metric-card">
+                <p>Click Rate</p>
+                <h1>0%</h1>
+            </div>
+
+            <div class="metric-card">
+                <p>Reply Rate</p>
+                <h1>{replyRate}%</h1>
+            </div>
+        </div>
+
+        <!-- OUTREACH VOLUME (CHART COMPONENT) -->
+        <c-dashboard-chart></c-dashboard-chart>
+
+        <!-- RECENT ACTIVITIES -->
+        <div class="card">
+            <h2>Recent Activities</h2>
+
+            <template if:true={activities}>
+                <template for:each={activities} for:item="act">
+                    <div key={act.Id} class="activity-item">
+                        <p class="activity-title">{act.Subject}</p>
+                        <span class="activity-date">{act.CreatedDate}</span>
+                    </div>
+                </template>
+            </template>
+        </div>
+
+    </div>
+</template>

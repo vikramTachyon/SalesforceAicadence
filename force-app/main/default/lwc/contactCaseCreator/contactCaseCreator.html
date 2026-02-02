@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Create Contact">
+        <div class="slds-p-around_medium">
+
+             <lightning-record-form
+                object-api-name="Contact"
+                mode="edit"
+                layout-type="Compact"
+                columns="2"
+                onsuccess={handleSuccess}>
+            </lightning-record-form>
+
+             <template if:true={caseId}>
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        label="Show Case Details"
+                        variant="brand"
+                        onclick={handleShowCase}>
+                    </lightning-button>
+                </div>
+            </template>
+
+             <template if:true={showCaseDetails}>
+                <div class="slds-m-top_medium">
+                    <lightning-card title="Auto Created Case">
+                        <lightning-record-form
+                            object-api-name="Case"
+                            mode="view"
+                            record-id={caseId}
+                            columns="2">
+                        </lightning-record-form>
+                    </lightning-card>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

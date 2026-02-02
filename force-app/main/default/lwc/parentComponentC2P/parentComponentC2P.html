@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <p><strong>Count = {countvalue}</strong></p>
+        </div>
+
+        <c-child-component-c2c
+            onsubtract={handleSubtract}
+            onadd={handleAdd}>
+        </c-child-component-c2c>
+
+    </lightning-card>
+</template>

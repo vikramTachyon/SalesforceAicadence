@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Account">
+
+        <!-- VIEW MODE -->
+        <template if:false={isEditMode}>
+            <p><b>Name:</b> {name}</p>
+            <p><b>Industry:</b> {industry}</p>
+            <p><b>Annual Revenue:</b> {revenue}</p>
+
+            <lightning-button
+                label="Edit"
+                variant="brand"
+                onclick={handleEdit}>
+            </lightning-button>
+        </template>
+
+        <!-- EDIT MODE -->
+        <template if:true={isEditMode}>
+            <lightning-record-edit-form
+                record-id={recordId}
+                object-api-name="Account"
+                onsuccess={handleSuccess}>
+
+                <lightning-input-field field-name="Name"></lightning-input-field>
+                <lightning-input-field field-name="Industry"></lightning-input-field>
+                <lightning-input-field field-name="AnnualRevenue"></lightning-input-field>
+
+                <lightning-button
+                    type="submit"
+                    label="Save"
+                    variant="brand">
+                </lightning-button>
+
+                <lightning-button
+                    label="Cancel"
+                    onclick={handleCancel}
+                    class="slds-m-left_small">
+                </lightning-button>
+
+            </lightning-record-edit-form>
+        </template>
+
+    </lightning-card>
+</template>

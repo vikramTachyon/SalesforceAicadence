@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Iframe Page">
+
+        <lightning-tabset>
+
+             
+
+            <lightning-tab label="Iframe Page" onactive={loadIframe}>
+                
+                <template if:true={showIframe}>
+                    <iframe
+                        src={iframeUrl}
+                        width="100%"
+                        height="600px"
+                        style="border:0;">
+                    </iframe>
+                </template>
+
+            </lightning-tab>
+
+        </lightning-tabset>
+
+    </lightning-card>
+</template>
